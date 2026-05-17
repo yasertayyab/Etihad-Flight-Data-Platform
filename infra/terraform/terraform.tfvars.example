@@ -1,0 +1,8 @@
+databricks_host = "https://<your-databricks-workspace>"
+databricks_token = "<your-personal-access-token>"
+catalog_name      = "etihad_platform"
+schema_name       = "aviation"
+storage_root      = "abfss://<container>@<storage-account>.dfs.core.windows.net/etihad"
+cluster_name      = "flight-platform-cluster"
+spark_version     = "12.2.x-scala2.12"
+node_type_id      = "Standard_DS3_v2"

@@ -1,0 +1,4 @@
+pyspark>=3.4.0
+delta-spark>=2.3.0
+python-dotenv>=1.0.0
+databricks-cli>=0.17.4

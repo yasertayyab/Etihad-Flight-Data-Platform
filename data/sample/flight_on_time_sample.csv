@@ -1,0 +1,4 @@
+FlightDate,Carrier,FlightNum,Origin,Dest,DepTime,ArrTime,DepDelay,ArrDelay,Cancelled,Diverted,Distance
+2023-01-03,ET,101,AUH,JFK,0900,1505,10,5,0,0,6838
+2023-01-03,ET,102,JFK,AUH,1805,0750,25,15,0,0,6838
+2023-01-04,ET,200,AUH,LHR,2200,0500,0,-5,0,0,3423

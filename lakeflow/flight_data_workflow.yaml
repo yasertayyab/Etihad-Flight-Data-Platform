@@ -1,0 +1,33 @@
+pipeline:
+  name: etihad-flight-data-workflow
+  description: |
+    Orchestration flow for the flight data platform. This workflow schedules bronze ingestion, DLT pipeline execution, and gold analytics delivery.
+
+  tasks:
+    - id: bronze_ingest
+      name: bronze_ingest
+      type: databricks_job
+      databricks_job:
+        job_name: flight-bronze-ingest
+        notebook_path: /Repos/<your-repo>/src/ingestion/autoloader_ingest.py
+        existing_cluster_id: ${databricks_cluster_id}
+
+    - id: flight_dlt
+      name: flight_dlt
+      type: databricks_job
+      databricks_job:
+        job_name: flight-dlt-pipeline
+        python_file: /Repos/<your-repo>/src/dlt/flight_dlt_pipeline.py
+        existing_cluster_id: ${databricks_cluster_id}
+
+    - id: gold_delivery
+      name: gold_delivery
+      type: databricks_job
+      databricks_job:
+        job_name: flight-gold-delivery
+        notebook_path: /Repos/<your-repo>/src/gold/gold_table_delivery.py
+        existing_cluster_id: ${databricks_cluster_id}
+
+  schedule:
+    cron: "0 2 * * *"
+    timezone: UTC
