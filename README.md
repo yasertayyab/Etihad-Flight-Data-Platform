@@ -210,5 +210,3 @@ etihad-flight-data-platform/
 - Workflow orchestration with Lakeflow
 
 ---
-
-This README follows the Spotify ETL Orchestrator structure while keeping all content relevant to the airline data platform project.
